@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1rem 2rem;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: sans-serif;
+}
