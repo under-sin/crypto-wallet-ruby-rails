@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Coins</h1>
+<p><strong>Data:</strong> <%= data_br(Date.today) %></p>
 
 <div id="coins">
   <% @coins.each do |coin| %>
@@ -12,3 +13,7 @@
 </div>
 
 <%= link_to "New coin", new_coin_path %>
+
+<div>
+  <small><%= application_name %></small>
+</div>
