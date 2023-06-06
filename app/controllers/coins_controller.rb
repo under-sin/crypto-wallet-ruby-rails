@@ -59,12 +59,13 @@ class CoinsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Use retornos de chamada para compartilhar configurações ou restrições comuns entre ações.
     def set_coin
       @coin = Coin.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Permitir apenas uma lista de parâmetros confiáveis.
+    # o .permit funciona ocmo uma segurança maior para o app. Só teremosa acesso a esses dados.
     def coin_params
       params.require(:coin).permit(:description, :acronym, :url_image)
     end
