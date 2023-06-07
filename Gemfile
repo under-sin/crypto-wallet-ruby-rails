@@ -49,6 +49,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'solargraph'
+gem 'tty-spinner'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
