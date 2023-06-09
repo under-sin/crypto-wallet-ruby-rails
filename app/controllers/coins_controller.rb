@@ -57,7 +57,7 @@ class CoinsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use retornos de chamada para compartilhar configurações ou restrições comuns entre ações.
     def set_coin
