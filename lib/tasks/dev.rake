@@ -11,8 +11,8 @@ namespace :dev do
       end
       
       # chama as outras rake para popular o banco
+      %x(rails dev:add_mining_types) # como vai ser feita a associação nas coins, a miningType precisa ser criada prim
       %x(rails dev:add_coins)
-      %x(rails dev:add_mining_types)
     else
       puts "Essa task só pode ser executada em ambiente de desenvolvimento"
     end
@@ -25,17 +25,20 @@ namespace :dev do
         {
           description: 'Bitcoin',
           acronym: 'BTC',
-          url_image: 'https://static.vecteezy.com/system/resources/thumbnails/008/505/801/small_2x/bitcoin-logo-color-illustration-png.png'
+          url_image: 'https://static.vecteezy.com/system/resources/thumbnails/008/505/801/small_2x/bitcoin-logo-color-illustration-png.png',
+          mining_type: MiningType.find_by(acronym: 'PoW'),
         },
         {
           description: 'Ethereum',
           acronym: 'ETC',
-          url_image: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/ETHEREUM-YOUTUBE-PROFILE-PIC.png'
+          url_image: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/ETHEREUM-YOUTUBE-PROFILE-PIC.png',
+          mining_type: MiningType.all.sample, #.sample pega um item aleatorio em um array
         },
         {
           description: 'Dogecoin',
           acronym: 'DOGE',
-          url_image: 'https://img2.gratispng.com/20180401/jkq/kisspng-shiba-inu-dogecoin-clip-art-doge-5ac19a4f2bb505.8373672415226373911791.jpg'
+          url_image: 'https://img2.gratispng.com/20180401/jkq/kisspng-shiba-inu-dogecoin-clip-art-doge-5ac19a4f2bb505.8373672415226373911791.jpg',
+          mining_type: MiningType.all.sample,
         },
       ]
     

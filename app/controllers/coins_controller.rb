@@ -67,6 +67,6 @@ class CoinsController < ApplicationController
     # Permitir apenas uma lista de parâmetros confiáveis.
     # o .permit funciona ocmo uma segurança maior para o app. Só teremosa acesso a esses dados.
     def coin_params
-      params.require(:coin).permit(:description, :acronym, :url_image)
+      params.require(:coin).permit(:description, :acronym, :url_image, :mining_type_id)
     end
 end
