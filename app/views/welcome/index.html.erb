@@ -1,5 +1,9 @@
 <h1>Seja Bem-vindo</h1>
-<p><strong>Data: </strong><%= data_br(Date.today) %></p>
+<p>O idioma padrão da aplicação é: <strong><%= t('actual_locale') %></strong></p>
+<p><strong>Data: </strong><%= I18n.l(Date.today) %></p>
+
+<p><%= I18n.t('hello')%></p>
+<p><%= t('hello')%></p> <%# Como estamos na view, n precisamos passar o 'I18n' para chama-lo %>
 
 <%= render "menu" %>
 

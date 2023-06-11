@@ -1,0 +1,7 @@
+pt-BR:
+  hello: "Olá, Mundo!"
+  links:
+    edit: "Editar está moeda"
+    show: "Mostrar está moeda"
+    destroy: "Deletar está moeda"
+    back_to_coins: "Voltar para moedas"

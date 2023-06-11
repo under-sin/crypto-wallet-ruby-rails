@@ -1,6 +1,7 @@
 class CoinsController < ApplicationController
   layout "admin" # informando o layout - por padrão o rails pega o application
   before_action :set_coin, only: %i[ show edit update destroy ]
+  before_action :set_mining_type_options, only: %i[ new create edit update ]
 
   # GET /coins or /coins.json
   def index
@@ -59,6 +60,11 @@ class CoinsController < ApplicationController
   end
   
   private
+    # método privado que vai ser usado no select (isso é para não chamarmos a model direto na view)
+    def set_mining_type_options
+      @mining_type_options = MiningType.all.pluck(:description, :id)
+    end
+
     # Use retornos de chamada para compartilhar configurações ou restrições comuns entre ações.
     def set_coin
       @coin = Coin.find(params[:id])
