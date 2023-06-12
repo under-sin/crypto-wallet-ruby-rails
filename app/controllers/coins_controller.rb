@@ -1,5 +1,5 @@
 class CoinsController < ApplicationController
-  layout "admin" # informando o layout - por padrão o rails pega o application
+  #layout "admin" # informando o layout - por padrão o rails pega o application
   before_action :set_coin, only: %i[ show edit update destroy ]
   before_action :set_mining_type_options, only: %i[ new create edit update ]
 

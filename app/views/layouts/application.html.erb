@@ -7,13 +7,17 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag params[:controller], "data-turbo-track": "reload" %>
+
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag params[:controller], "data-turbo-track" => "reload" %>
   </head>
 
   <body>
     <header>
       <h2>Header padrão</h2>
     </header>
+    <h3><%= params[:controller]%></h3>
     <%= yield %>
     <footer>
       <h2>Footer padrão</h2>
